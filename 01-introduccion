@@ -1,0 +1,13 @@
+1. Lenguaje Dinamico
+
+foo = {
+
+}
+
+foo.name = "Pedro"
+console.log(foo.name)
+
+2. Debilmente tipado
+
+var a=10
+a="Hello"

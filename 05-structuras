@@ -1,0 +1,32 @@
+const a = [1,2,3,4,5,6]
+a.filter(v=>v%2===0) [2,4,6]
+a.find(v=>v%2===0) //2
+a.sort
+a.map(v=>v*v)
+a.reduce((a,v)=>a+v,100)
+
+    0+1=1
+    1+2=3
+    3+3=6
+    6+4=10
+    10+5=15
+    15+6=21
+
+    function filter(array,predicate){
+        const newArray = []
+        for(const value of array){
+            if(predicate(value)){
+                newArray.push(value)
+            }
+        }
+        return newArray;
+    }
+
+
+    const map = new Map();
+
+    map.set("key", 1)
+    map.get("key")
+    
+
+    const set = new Set([1,2,3,3,4,4,5])

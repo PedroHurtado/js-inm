@@ -1,0 +1,31 @@
+//antes de 2015
+function Foo(name){   //Contructor y tipo
+    this.name = name;
+}
+
+Foo.prototype.write = function(){  //metodo de instancia
+    console.log(this.name)
+}
+
+Foo.write = function(){ //metodo estatico
+    console.log("static method")
+}
+
+//ES6
+
+class Foo{
+    #name
+    constructor(name){
+        this.#name = name;        
+    }
+    write(){
+        console.log(this.#name)
+    }
+    static write(){
+        console.log("static method")
+    }
+}
+
+//https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Object
+//https://developer.mozilla.org/es/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
+//https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Classes

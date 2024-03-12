@@ -1,0 +1,49 @@
+1. Se pierde cuando se asigna una funcion a una variable
+
+window.x =10;
+window.foo = {
+    x:11,
+    write:function(){
+        console.log(this.x)
+    }
+}
+
+window.foo.write(); //11
+window.writer = window.foo.write.bind(window.foo)
+window.writer() //10
+
+2. Se pierde cuando pasas como argumento a otra funcion una funcion
+
+class Bar{
+    constructor(writer){
+        writer();
+        this.writer = writer;
+        this.writer();
+    }
+}
+
+class Foo{
+    constructor(){
+        //new Bar(this.writer.bind(this)) //1
+        new Bar(()=>this.writer())  //2
+    }
+    writer(){
+        console.log(this)
+    }
+}
+
+const bar = {}
+function Foo(name){    
+    this.name = name;
+}
+
+Foo.call(bar,"Pedro")
+
+
+const bar = {}
+function Foo(name){    
+    this.name = name;
+}
+
+Foo.apply(bar,["Pedro"])
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function

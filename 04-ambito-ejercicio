@@ -1,0 +1,27 @@
+Dadas las siguientes funciones contructoras
+
+    function Foo(name){
+        this.name =name
+    }
+
+    function Bar(name,surname){
+        this.name = name;
+        this.surname = surname
+    }
+
+crear una function factoria que simule el function del 
+operador new
+
+function factory(scope,strType,...args){
+    const ctor = scope[strType];
+    if(!ctor){
+        throw `el ${strType} no existe`
+    }
+    const instance = Object.create(ctor.prototype)
+    ctor.apply(instance, args)
+    return instance;
+}
+
+factory(window, "Foo", "Pedro")
+factory(window, "Bar", "Pedro", "Hurtado")
+factory(window, "Pepito", "Pedro", "Hurtado")
