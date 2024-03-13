@@ -1,0 +1,8 @@
+HTMLDivElement                  Text
+HTMLElement                     CharacterData 
+Element
+
+Node                            Node
+EventTarget                     EventTarget
+Object                          Object
+null                            null
